@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+  <title>List of Names</title>
+  <link rel="stylesheet" href="C:\Javascript\list.css">
+</head>
+<body>
+    <main>
+        <div class="box">
+            <h1>List of Names</h1>
+            
+            <input type="text" id="nameInput">
+            <button class="button" type="button" id="addButton">Add Name</button>
+            <ul id="nameList"></ul>
+            <script>
+            // Create an empty list to store the names.
+            const names = [];
+            // Add an event listener to the "Add Name" button.
+            document.getElementById("addButton").addEventListener("click", function() {
+                // Get the value of the "nameInput" field.
+                const name = document.getElementById("nameInput").value;
+                
+                // Check if the name is already in the list.
+                if (!names.includes(name)) {
+                    // Add the name to the list.
+                    names.push(name);
+                    
+                    // Create a new list item element.
+                    const listItem = document.createElement("li");
+                    
+                    // Set the text content of the list item element to the name.
+                    listItem.textContent = name;
+                    
+                    // Append the list item element to the "nameList" element.
+                    document.getElementById("nameList").appendChild(listItem);
+                }
+                // Clear the "nameInput" field.
+                document.getElementById("nameInput").value = "";
+            });
+            </script>
+        </div>
+    </main>
+  
+</body>
+</html>

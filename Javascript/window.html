@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Item Selector</title>
+<link rel="stylesheet" href="C:\Javascript\w.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="window">
+        <h2>Left Window</h2>
+        <ul id="leftList">
+            <li>volvo</li>
+            <li>saab</li>
+            <li>opel</li>
+            <li>audi</li>
+            <li>ford</li>
+        </ul>
+    </div>
+    <button onclick="addItem()">Add to Right</button>
+    <button onclick="removeItem()">Add to Left</button>
+    <div class="window">
+        <h2>Right Window</h2>
+        <ul id="rightList">
+        </ul>
+    </div>
+</div>
+
+<script>
+    function addItem() {
+        var leftList = document.getElementById('leftList');
+        var rightList = document.getElementById('rightList');
+        var selectedItem = leftList.querySelector('li.selected');
+        if (selectedItem) {
+            rightList.appendChild(selectedItem);
+            selectedItem.classList.remove('selected');
+        }
+    }
+
+    function removeItem() {
+        var leftList = document.getElementById('leftList');
+        var rightList = document.getElementById('rightList');
+        var selectedItem = rightList.querySelector('li.selected');
+        if (selectedItem) {
+            leftList.appendChild(selectedItem);
+            selectedItem.classList.remove('selected');
+        }
+    }
+
+    document.querySelectorAll('.window ul li').forEach(item => {
+        item.addEventListener('click', function() {
+            // Toggle selection
+            if (this.classList.contains('selected')) {
+                this.classList.remove('selected');
+            } else {
+                this.classList.add('selected');
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

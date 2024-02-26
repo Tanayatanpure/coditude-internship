@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="C:\Javascript\list.css">
+<title>Dropdown Scrolling List</title>
+<style>
+  #selectedName {
+    text-transform: uppercase;
+  }
+</style>
+</head>
+<body>
+    <main>
+        <div class="box">
+            <select id="nameList" onchange="displaySelectedName()">
+                <option value="">Select a name</option>
+                <option value="anii">anii</option>
+                <option value="Alice">Alice</option>
+                <option value="Bob">Bob</option>
+                <option value="Emily">Emily</option>
+                <!-- Add more options as needed -->
+              </select>
+              
+              <div id="selectedName"></div>
+              
+              <script>
+              function displaySelectedName() {
+                var dropdown = document.getElementById("nameList");
+                var selectedName = dropdown.options[dropdown.selectedIndex].text;
+                var displayDiv = document.getElementById("selectedName");
+                displayDiv.textContent = selectedName.toUpperCase();
+              }
+              </script>
+              
+        </div>
+    </main>
+</body>
+</html>

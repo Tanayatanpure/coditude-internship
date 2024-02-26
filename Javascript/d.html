@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scrolling List</title>
+<link rel="stylesheet" href="C:\Javascript\list.css">
+<style>
+  #selectedName {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+</style>
+</head>
+<body>
+    <main>
+        <div class="box">
+            
+<select id="nameList" size="5">
+    <option value="John">John</option>
+    <option value="Jane">Jane</option>
+    <option value="Alice">Alice</option>
+    <option value="Bob">Bob</option>
+    <option value="Emma">Emma</option>
+  </select>
+  
+  <div id="selectedName"></div>
+  
+  <script>
+    document.getElementById('nameList').addEventListener('change', function() {
+      var selectedName = this.value;
+      document.getElementById('selectedName').textContent = selectedName.toUpperCase();
+    });
+  </script>
+  
+        </div>
+    </main>
+</body>
+</html>

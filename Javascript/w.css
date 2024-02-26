@@ -1,0 +1,18 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.window {
+    width: 200px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    height: 300px;
+    overflow-y: auto;
+    background-color: aquamarine;
+}
+
+button {
+    margin-top: 10px;
+    display: block;
+}

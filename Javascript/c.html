@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="C:\Javascript\list.css">
+<title>Check Radio and Checkbox</title>
+</head>
+<body>
+    <main>
+        <div class="box">
+            <input type="text" id="inputValue" placeholder="Enter value">
+<button onclick="checkAndSelect()">Check and Select</button><br><br>
+
+<label for="radioOption1">apple:</label>
+<input type="radio" id="radioOption1" name="radioOptions" value="apple">
+
+<label for="radioOption2">banana:</label>
+<input type="radio" id="radioOption2" name="radioOptions" value="banana">
+
+<label for="radioOption3">orange:</label>
+<input type="radio" id="radioOption3" name="radioOptions" value="orange"><br><br>
+
+<label for="checkboxOption1">apple:</label>
+<input type="checkbox" id="checkboxOption1" value="apple">
+
+<label for="checkboxOption2">banana:</label>
+<input type="checkbox" id="checkboxOption2" value="banana">
+
+<label for="checkboxOption3">Orange:</label>
+<input type="checkbox" id="checkboxOption3" value="orange"><br><br>
+
+<script>
+function checkAndSelect() {
+  var inputValue = document.getElementById("inputValue").value;
+  
+  // Check for radio buttons
+  var radioOptions = document.getElementsByName("radioOptions");
+  for (var i = 0; i < radioOptions.length; i++) {
+    if (radioOptions[i].value === inputValue) {
+      radioOptions[i].checked = true;
+      break;
+    }
+  }
+  
+  // Check for checkboxes
+  var checkboxOptions = document.querySelectorAll('input[type="checkbox"]');
+  for (var i = 0; i < checkboxOptions.length; i++) {
+    if (checkboxOptions[i].value === inputValue) {
+      checkboxOptions[i].checked = true;
+      break;
+    }
+  }
+}
+</script>
+        </div>
+    </main>
+</body>
+</html>

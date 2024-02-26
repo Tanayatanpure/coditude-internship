@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="C:\Javascript\list.css">
+    <title>String Matching</title>
+</head>
+<body>
+    <main>
+        <div class="box">
+            <h1>String Matching</h1>
+<label for="string1">Enter first string:</label>
+<input type="text" id="string1"><br><br>
+<label for="string2">Enter second string:</label>
+<input type="text" id="string2"><br><br>
+<button onclick="compareStrings()">Compare Strings</button><br><br>
+<p id="result"></p>
+
+<script>
+    function compareStrings() {
+    var string1 = document.getElementById("string1").value.toLowerCase();
+    var string2 = document.getElementById("string2").value.toLowerCase();
+    
+    // Split the strings into arrays of words
+    var words1 = string1.split(" ");
+    var words2 = string2.split(" ");
+    
+    // Initialize a counter for matching words
+    var matchCount = 0;
+    
+    // Loop through each word in the second string
+    for (var i = 0; i < words2.length; i++) {
+        // Check if the word exists in the first string
+        if (words1.includes(words2[i])) {
+            matchCount++;
+        }
+    }
+    
+    // Display the number of matching words
+    document.getElementById("result").innerHTML = "Number of matching words: " + matchCount;
+}
+
+</script>
+        </div>
+    </main>
+</body>
+</html>

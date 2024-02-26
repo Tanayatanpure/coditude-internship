@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Letter Replacement</title>
+<link rel="stylesheet" href="C:\Javascript\list.css">
+</head>
+<body>
+    <main>
+        <div class="box">
+            <h2>Letter Replacement</h2>
+
+<label for="originalWord">Enter a word:</label>
+<input type="text" id="originalWord">
+<br>
+<label for="letterToReplace">Letter to Replace:</label>
+<input type="text" id="letterToReplace" maxlength="1">
+<br>
+<label for="replacementLetter">Replacement Letter:</label>
+<input type="text" id="replacementLetter" maxlength="1">
+<br>
+<button onclick="replaceLetter()">Replace Letter</button>
+
+<script>
+function replaceLetter() {
+    var originalWord = document.getElementById("originalWord").value;
+    var letterToReplace = document.getElementById("letterToReplace").value;
+    var replacementLetter = document.getElementById("replacementLetter").value;
+    
+    var modifiedWord = originalWord.replace(new RegExp(letterToReplace, 'g'), replacementLetter);
+    
+    alert("Modified Word: " + modifiedWord);
+}
+</script>
+        </div>
+    </main>
+</body>
+</html>
